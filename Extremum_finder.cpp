@@ -198,20 +198,23 @@ int main()
     passive_search(Function, -5, 3, 0.001);
 
     cout << "МЕТОД ДЕЛЕНИЯ ОТРЕЗКА ПОПОЛАМ" << endl << endl;
-    cout << "Точка минимума" << endl;
+    cout << "Точки минимума" << endl;
     dividing_in_half(Function, -5, -3, 0.000001, true);
+    dividing_in_half(Function, 0, 3, 0.000001, true);
     cout << "Точка максимума" << endl;
     dividing_in_half(Function, -3, 0, 0.000001, false);
 
     cout << "МЕТОД ЗОЛОТОГО СЕЧЕНИЯ" << endl << endl;
-    cout << "Точка минимума" << endl;
+    cout << "Точки минимума" << endl;
     golden_ratio(Function, -5, -3, 0.000001, true);
+    golden_ratio(Function, 0, 3, 0.000001, true);
     cout << "Точка максимума" << endl;
     golden_ratio(Function, -3, 0, 0.000001, false);
 
     cout << "МЕТОД ФИБОНАЧИ" << endl << endl;
-    cout << "Точка минимума" << endl;
+    cout << "Точки минимума" << endl;
     fibonachi(Function, -5, -3, 0.000001, true);
+    fibonachi(Function, 0, 3, 0.000001, true);
     cout << "Точка максимума" << endl;
     fibonachi(Function, -3, 0, 0.000001, false);
     return 0;
