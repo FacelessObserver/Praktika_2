@@ -11,6 +11,7 @@ void passive_search(function<float(float)> func, float st, float en, float step)
 {
     int iters = 0;
     srand(time(0));
+
     for (float x = st + step; x < en - step; x += step)
     {
         iters ++;
@@ -38,6 +39,8 @@ void dividing_in_half(function<float(float)> func, float st, float en, float eps
     srand(time(0));
     float alpha_0 = st, beta_0 = en;
 
+    cout << "Пошаговые приближения:" << endl;
+
     while (true)
     {
         iters ++;
@@ -57,14 +60,16 @@ void dividing_in_half(function<float(float)> func, float st, float en, float eps
             beta_1 = beta_0;
         }
 
+        float x = (alpha_1 + beta_1) / 2;
+
         if (beta_1 - alpha_1 < epsilon)
         {
-            float x = (alpha_1 + beta_1) / 2;
-            cout << "x = " << x << " y = " << func(x) << endl;
+            cout << "Итоговое приближение: " << "x = " << x << " y = " << func(x) << endl;
             break;
         }
         else
         {
+            cout << "x = " << x << " y = " << func(x) << endl;
             alpha_0 = alpha_1;
             beta_0 = beta_1;
         }
@@ -82,6 +87,8 @@ void golden_ratio(function<float(float)> func, float st, float en, float epsilon
     const float sqrt_5 = sqrt(5.0);
     const float ratio_1 = 2.0 / (3.0 + sqrt_5);
     const float ratio_2 = 2.0 / (1.0 + sqrt_5);
+
+    cout << "Пошаговые приближения:" << endl;
 
     while (true)
     {
@@ -106,14 +113,16 @@ void golden_ratio(function<float(float)> func, float st, float en, float epsilon
             beta_1 = beta_0;
         }
 
+        float x = (alpha_1 + beta_1) / 2;
+
         if (beta_1 - alpha_1 < epsilon)
         {
-            float x = (alpha_1 + beta_1) / 2;
-            cout << "x = " << x << " y = " << func(x) << endl;
+            cout << "Итоговое приближение: " << "x = " << x << " y = " << func(x) << endl;
             break;
         }
         else
         {
+            cout << "x = " << x << " y = " << func(x) << endl;
             alpha_0 = alpha_1;
             beta_0 = beta_1;
         }
@@ -139,6 +148,8 @@ void fibonachi(function<float(float)> func, float st, float en, float epsilon, b
     int iters = 0, N = 1, k = 0;
     srand(time(0));
     float alpha_0 = st, beta_0 = en, delta_0 = en - st;
+
+    cout << "Пошаговые приближения:" << endl;
 
     while (delta_0 / fibonachi_num(N + 1) > epsilon)
     {
@@ -166,14 +177,17 @@ void fibonachi(function<float(float)> func, float st, float en, float epsilon, b
             alpha_1 = alpha;
             beta_1 = beta_0;
         }
+
+        float x = (alpha_1 + beta_1) / 2;
+
         if (k >= N - 2)
         {
-            float x = (alpha_1 + beta_1) / 2;
-            cout << "x = " << x << " y = " << func(x) << endl;
+            cout << "Итоговое приближение: " << "x = " << x << " y = " << func(x) << endl;
             break;
         }
         else
         {
+            cout << "x = " << x << " y = " << func(x) << endl;
             alpha_0 = alpha_1;
             beta_0 = beta_1;
             k ++;
