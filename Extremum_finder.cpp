@@ -69,7 +69,7 @@ void dividing_in_half(function<float(float)> func, float st, float en, float eps
         }
         else
         {
-            cout << "x = " << x << " y = " << func(x) << endl;
+            cout << "Шаг " << iters << " x = " << x << " y = " << func(x) << endl;
             alpha_0 = alpha_1;
             beta_0 = beta_1;
         }
@@ -122,7 +122,7 @@ void golden_ratio(function<float(float)> func, float st, float en, float epsilon
         }
         else
         {
-            cout << "x = " << x << " y = " << func(x) << endl;
+            cout << "Шаг " << iters << " x = " << x << " y = " << func(x) << endl;
             alpha_0 = alpha_1;
             beta_0 = beta_1;
         }
@@ -187,7 +187,7 @@ void fibonachi(function<float(float)> func, float st, float en, float epsilon, b
         }
         else
         {
-            cout << "x = " << x << " y = " << func(x) << endl;
+            cout << "Шаг " << iters << " x = " << x << " y = " << func(x) << endl;
             alpha_0 = alpha_1;
             beta_0 = beta_1;
             k ++;
